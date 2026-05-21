@@ -101,9 +101,10 @@
         text-shadow:
           4px 4px 0 var(--pink),
           8px 8px 0 rgba(216, 45, 134, 0.28);
-        font-size: clamp(40px, 11vw, 92px);
+        font-size: 76px;
         line-height: 1.08;
         letter-spacing: 0;
+        white-space: nowrap;
       }
 
       .heart-row {
@@ -157,6 +158,16 @@
         .screen::before,
         .screen::after {
           display: none;
+        }
+
+        h1 {
+          font-size: 40px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        h1 {
+          font-size: 34px;
         }
       }
     </style>
