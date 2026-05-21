@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>你好，任祎</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #ffd6ea;
+        --bg-dark: #f49cca;
+        --pink: #ff63ad;
+        --pink-deep: #d82d86;
+        --cream: #fff8fc;
+        --ink: #55223b;
+        --mint: #7ee7cf;
+        --yellow: #ffe36e;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        overflow: hidden;
+        background:
+          linear-gradient(45deg, rgba(255, 255, 255, 0.18) 25%, transparent 25%) 0 0 / 32px 32px,
+          linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.18) 75%) 0 0 / 32px 32px,
+          linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.18) 75%) 16px 16px / 32px 32px,
+          linear-gradient(45deg, rgba(255, 255, 255, 0.18) 25%, transparent 25%) 16px 16px / 32px 32px,
+          var(--bg);
+        color: var(--ink);
+        font-family:
+          "Courier New",
+          "Microsoft YaHei",
+          "PingFang SC",
+          monospace;
+      }
+
+      .screen {
+        position: relative;
+        width: min(86vw, 720px);
+        padding: clamp(32px, 8vw, 72px);
+        border: 8px solid var(--ink);
+        background: var(--cream);
+        box-shadow:
+          12px 12px 0 var(--pink-deep),
+          24px 24px 0 rgba(85, 34, 59, 0.16);
+        text-align: center;
+        image-rendering: pixelated;
+      }
+
+      .screen::before,
+      .screen::after {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        content: "";
+        background: var(--yellow);
+        box-shadow:
+          32px 0 0 var(--pink),
+          64px 0 0 var(--mint),
+          0 32px 0 var(--pink),
+          32px 32px 0 var(--mint);
+      }
+
+      .screen::before {
+        top: -40px;
+        left: -40px;
+      }
+
+      .screen::after {
+        right: -40px;
+        bottom: -40px;
+        transform: rotate(180deg);
+      }
+
+      .badge {
+        display: inline-block;
+        margin-bottom: 24px;
+        padding: 8px 14px;
+        border: 4px solid var(--ink);
+        background: var(--yellow);
+        box-shadow: 6px 6px 0 var(--ink);
+        font-size: clamp(14px, 2.5vw, 18px);
+        font-weight: 700;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        margin: 0;
+        text-shadow:
+          4px 4px 0 var(--pink),
+          8px 8px 0 rgba(216, 45, 134, 0.28);
+        font-size: clamp(40px, 11vw, 92px);
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+
+      .heart-row {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 36px;
+      }
+
+      .heart {
+        width: 32px;
+        height: 32px;
+        background:
+          linear-gradient(var(--pink-deep), var(--pink-deep)) 8px 0 / 8px 8px no-repeat,
+          linear-gradient(var(--pink-deep), var(--pink-deep)) 24px 0 / 8px 8px no-repeat,
+          linear-gradient(var(--pink-deep), var(--pink-deep)) 0 8px / 40px 16px no-repeat,
+          linear-gradient(var(--pink-deep), var(--pink-deep)) 8px 24px / 24px 8px no-repeat,
+          linear-gradient(var(--pink-deep), var(--pink-deep)) 16px 32px / 8px 8px no-repeat;
+        transform: translateY(0);
+        animation: bounce 1.2s steps(2, end) infinite;
+      }
+
+      .heart:nth-child(2) {
+        animation-delay: 0.2s;
+        background:
+          linear-gradient(var(--mint), var(--mint)) 8px 0 / 8px 8px no-repeat,
+          linear-gradient(var(--mint), var(--mint)) 24px 0 / 8px 8px no-repeat,
+          linear-gradient(var(--mint), var(--mint)) 0 8px / 40px 16px no-repeat,
+          linear-gradient(var(--mint), var(--mint)) 8px 24px / 24px 8px no-repeat,
+          linear-gradient(var(--mint), var(--mint)) 16px 32px / 8px 8px no-repeat;
+      }
+
+      .heart:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes bounce {
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @media (max-width: 520px) {
+        .screen {
+          border-width: 6px;
+          box-shadow:
+            8px 8px 0 var(--pink-deep),
+            16px 16px 0 rgba(85, 34, 59, 0.16);
+        }
+
+        .screen::before,
+        .screen::after {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="screen" aria-label="粉色像素风问候网页">
+      <div class="badge">PIXEL PINK</div>
+      <h1>你好，任祎</h1>
+      <div class="heart-row" aria-hidden="true">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+      </div>
+    </main>
+  </body>
+</html>
